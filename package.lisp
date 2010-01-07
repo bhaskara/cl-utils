@@ -59,4 +59,7 @@
 
    ;; Sequences
    :blocks
+
+   ;; Iteration
+   :do-iterator
 ))

@@ -9,6 +9,7 @@
    (:file "functional" :depends-on ("macros"))
    (:file "seq-utils" :depends-on ("macros"))
    (:file "list-utils" :depends-on ("macros"))
+   (:file "iteration" :depends-on ("macros"))
    (:file "hash-utils" :depends-on ("package"))))
 
 
