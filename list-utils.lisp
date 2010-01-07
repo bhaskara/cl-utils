@@ -16,7 +16,7 @@
   (orf test #'eql)
   (if l1
       (dsbind (f . r) l1
-	(aand (position f l2 :test test)
-	      (is-permutation r (remove-nth it l2))))
+	(awhen (position f l2 :test test)
+	  (is-permutation r (remove-nth it l2) :test test)))
       (null l2)))
 
