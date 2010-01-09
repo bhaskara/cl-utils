@@ -47,6 +47,7 @@
 
    ;; Hash tables
    :hash-table-has-key :do-hash-entries :hash-keys :pprint-hash-table
+   :hash-table-to-alist
 
    ;; Sequences
    :blocks
@@ -59,6 +60,9 @@
 
    ;; Sequences
    :blocks
+
+   ;; Arrays
+   :make-adjustable-vector
 
    ;; Iteration
    :do-iterator

@@ -25,3 +25,8 @@
 	   (pprint-exit-if-list-exhausted)
 	   (pprint-newline :mandatory str))))))
 
+
+(defun hash-table-to-alist (h)
+  (let ((l nil))
+    (do-hash-entries ((k v) h l)
+      (push (cons k v) l))))
