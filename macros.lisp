@@ -54,17 +54,13 @@ Set up bindings for the variables as functions of the given object, then evaluat
 (defmacro with-struct ((name &rest fields) s &body body)
   "with-struct (CONC-NAME . FIELDS) S &rest BODY
 
-Example:
-with-struct (foo- bar baz) s ...
-is equivalent to
-let ((bar (foo-bar s)) (baz (foo-baz s)))...
-
-TODO: despite the name, this is not like with-accessors or with-slots in that setf-ing bar above would not change the value of the corresponding slot in s."
+"
 
   (let ((gs (gensym)))
     `(let ((,gs ,s))
-       (let ,(mapcar #'(lambda (f)
-			 `(,f (,(intern-compound-symbol name f) ,gs)))
+       (symbol-macrolet 
+	   ,(mapcar #'(lambda (f)
+			`(,f (,(intern-compound-symbol name f) ,gs)))
 	      fields)
 	 ,@body))))
 

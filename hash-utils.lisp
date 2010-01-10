@@ -5,7 +5,7 @@
   (nth-value 1 (gethash k h)))
 
 (defmacro do-hash-entries (((k v) h &optional ret-val) &body body)
-  "Iterate with K and V looping through corresponding keys and values of hash table H, and repeatedly execute body.  Both K and V are considered ignorable within BODY."
+  "Iterate with K and V looping through corresponding keys and values of hash table H, and repeatedly execute body.  Both K and V are considered ignorable within BODY.  Uses maphash, so the only changes allowed on an iteration are that current hash value of K may be changed and entry for K may be removed."
   `(progn (maphash #'(lambda (,k ,v) (declare (ignorable ,k ,v)) ,@body) ,h)
 	  ,ret-val))
 
