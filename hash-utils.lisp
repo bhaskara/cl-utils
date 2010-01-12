@@ -27,6 +27,15 @@
 
 
 (defun hash-table-to-alist (h)
+  "Convert hash table to alist.  Note that this loses information about the equality test, which you must remember when looking up items."
   (let ((l nil))
     (do-hash-entries ((k v) h l)
       (push (cons k v) l))))
+
+(defun alist-to-hash-table (l &key test)
+  "Convert alist to hash table.  Test defaults to #'eql."
+  (orf test #'equal)
+  (let ((h (make-hash-table :test test)))
+    (dolist (pair l h)
+      (dsbind (k . v) pair
+	(setf (gethash k h) v)))))

@@ -47,7 +47,7 @@
 
    ;; Hash tables
    :hash-table-has-key :do-hash-entries :hash-keys :pprint-hash-table
-   :hash-table-to-alist
+   :hash-table-to-alist :alist-to-hash-table
 
    ;; Sequences
    :blocks
@@ -66,4 +66,7 @@
 
    ;; Iteration
    :do-iterator
+
+   ;; Math
+   :close-to :*tol*
 ))
