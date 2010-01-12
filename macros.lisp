@@ -315,9 +315,12 @@ Expands to code that defines two methods.  The first is obtained by replacing de
   (orf test #'equal)
   (with-gensyms (hist)
     `(let ((,hist nil))
-       (repeat ,num-trials 
+       (repeat ,num-trials
 	 (_f update-histogram ,hist ,form :test ,test))
        (if ,normalize (normalize-histogram ,hist) ,hist))))
+
+(defun hist-count (hist pred)
+  (reduce #'+ hist :key #'(lambda (pair) (if (funcall pred (car pair)) (cdr pair) 0))))
 
 (defmacro if-rand (p f1 f2)
   "With probability P do F1, else F2."

@@ -37,7 +37,7 @@
    :_f :toggle :orf
 
    ;; Randomized
-   :generate-histogram :if-rand :when-rand
+   :generate-histogram :if-rand :when-rand :hist-count
 
    ;; Output
    :bind-pprint-args
@@ -50,7 +50,7 @@
    :hash-table-to-alist :alist-to-hash-table
 
    ;; Sequences
-   :blocks
+   :blocks :is-prefix
 
    ;; Lists
    :filter :is-permutation
@@ -65,8 +65,11 @@
    :make-adjustable-vector
 
    ;; Iteration
-   :do-iterator
+   :do-iterator :map-iterator :realize
 
    ;; Math
    :close-to :*tol*
+
+   ;; Printing
+   :force-format
 ))

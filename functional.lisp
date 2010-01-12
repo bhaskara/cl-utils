@@ -95,4 +95,4 @@ For now, all the Fi except the last one must be unary.  Return F s.t. (apply f #
 
 (defun partial (fn &rest some-args)
   "Return fn with first k args bound to some-args"
-  #'(lambda (&rest remaining-args) (apply fn some-args remaining-args)))
+  #'(lambda (&rest remaining-args) (apply fn (append some-args remaining-args))))

@@ -21,3 +21,13 @@
 
 
   
+(defun is-prefix (s1 s2 &key test)
+  (orf test #'eql)
+  (setq s1 (coerce s1 'list)
+	s2 (coerce s2 'list))
+  (or (null s1)
+      (and (not (null s2))
+	   (dsbind (f . r) s1
+	     (dsbind (f2 . r2) s2
+	       (and (funcall test f f2)
+		    (is-prefix r r2)))))))

@@ -11,5 +11,15 @@
 		(progn ,@body)
 		(return ,ret-val)))))))
 
+(defun realize (iter)
+  "Realize an iterator into a list"
+  (let ((l nil))
+    (do-iterator (x iter (nreverse l)) (push x l))))
+       
 
-
+(defun map-iterator (fn iter)
+  #'(lambda ()
+      (mvbind (not-done x) (funcall iter)
+	(when not-done
+	  (funcall fn x)))))
+	    
