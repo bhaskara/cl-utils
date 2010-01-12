@@ -12,6 +12,7 @@
    (:file "iteration" :depends-on ("macros"))
    (:file "array-utils" :depends-on ("macros"))
    (:file "hash-utils" :depends-on ("package"))
-   (:file "math-utils" :depends-on ("package"))))
+   (:file "math-utils" :depends-on ("package"))
+   (:file "print-utils" :depends-on ("macros"))))
 
 
