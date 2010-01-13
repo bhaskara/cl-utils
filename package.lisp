@@ -65,7 +65,7 @@
    :make-adjustable-vector
 
    ;; Iteration
-   :do-iterator :map-iterator :realize
+   :do-iterator :map-iterator :realize :iterator :take :range :take-until :concat
 
    ;; Math
    :close-to :*tol*
