@@ -53,7 +53,7 @@
    :blocks :is-prefix
 
    ;; Lists
-   :filter :is-permutation
+   :filter :is-permutation :length-equals
 
    ;; Alists
    :lookup-alist

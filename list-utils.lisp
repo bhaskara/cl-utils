@@ -23,3 +23,10 @@
 	  (is-permutation r (remove-nth it l2) :test test)))
       (null l2)))
 
+
+(defun length-equals (k l)
+  "Determine whether L's length equals K in O(K) time (as opposed to O(|L|))."
+  (cond
+    ((zerop k) (null l))
+    ((null l) (zerop k))
+    (t (length-equals (1- k) (cdr l)))))
