@@ -66,6 +66,7 @@
 
    ;; Iteration
    :do-iterator :map-iterator :realize :iterator :take :range :take-until :concat
+   :elements-satisfying :iter
 
    ;; Math
    :close-to :*tol*
