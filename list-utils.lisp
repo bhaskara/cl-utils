@@ -17,11 +17,8 @@
 
 (defun is-permutation (l1 l2 &key test)
   (orf test #'eql)
-  (if l1
-      (dsbind (f . r) l1
-	(awhen (position f l2 :test test)
-	  (is-permutation r (remove-nth it l2) :test test)))
-      (null l2)))
+  (and (= (length l1) (length l2))
+       (every #'(lambda (x) (member x l2 :test test)) l1)))
 
 
 (defun length-equals (k l)

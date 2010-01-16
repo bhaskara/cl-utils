@@ -8,9 +8,8 @@
     #'(lambda ()
 	(when l
 	  (values t (pop l))))))
-	    
-  
 
+	    
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Code to do with lazy sequences represented by an 
 ;; iterator: a function of no arguments that repeatedly

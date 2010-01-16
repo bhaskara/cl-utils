@@ -69,7 +69,7 @@
    :elements-satisfying :iter
 
    ;; Math
-   :close-to :*tol*
+   :close-to :*tol* :mean :std :quantile
 
    ;; Printing
    :force-format
