@@ -50,7 +50,7 @@
    :hash-table-to-alist :alist-to-hash-table
 
    ;; Sequences
-   :blocks :is-prefix
+   :blocks :is-prefix :slast
 
    ;; Lists
    :filter :is-permutation :length-equals

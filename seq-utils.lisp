@@ -31,3 +31,11 @@
 	     (dsbind (f2 . r2) s2
 	       (and (funcall test f f2)
 		    (is-prefix r r2)))))))
+
+
+
+(defgeneric slast (s)
+  (:documentation "Return the last item of a sequence.")
+  (:method ((s list)) (cdr (last s)))
+  (:method ((s vector)) (aref s (1- (length s)))))
+  
