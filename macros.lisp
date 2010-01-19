@@ -8,7 +8,7 @@
 ;; Definitions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defmacro defvars (&rest var-names)
+(defmacro defvars (&body var-names)
   (cons 'progn (mapcar #'(lambda (name) `(defvar ,name)) var-names)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
