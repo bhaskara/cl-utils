@@ -25,7 +25,7 @@
    :while :till :repeat-until :repeat :for-loop
 
    ;; Abbreviations
-   :abbrev :mvbind :dsbind :mvsetq :unbind-slot
+   :abbrev :mvbind :dsbind :mvsetq :unbind-slot :unbind-slots
 
    ;; CLOS
    :def-symmetric-method

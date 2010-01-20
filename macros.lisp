@@ -225,6 +225,13 @@ Repeatedly executes BODY with VAR bound to I,I+INC,...  The loop is stopped befo
 (abbrev mvsetq multiple-value-setq)
 (abbrev unbind-slot slot-makunbound)
 
+(defmacro unbind-slots (o &rest args)
+  "unbind-slots OBJ SLOT1 ... SLOTk
+slot names are unevaluated (no quote needed)."
+  (with-gensyms (obj)
+    `(let ((,obj ,o))
+       ,@(mapcar #'(lambda (a) `(unbind-slot ,obj ',a)) args))))
+
 ;; Spell these out so slime can indent correctly
 (defmacro mvbind (vars form &body body)
   "abbreviation for multiple-value-bind"
