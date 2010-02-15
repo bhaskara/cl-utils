@@ -36,7 +36,7 @@
 
 (defgeneric slast (s)
   (:documentation "Return the last item of a sequence.")
-  (:method ((s list)) (cdr (last s)))
+  (:method ((s list)) (car (last s)))
   (:method ((s vector)) (aref s (1- (length s)))))
 
 (defun groups-of-size (seq n &key allow-incomplete)
